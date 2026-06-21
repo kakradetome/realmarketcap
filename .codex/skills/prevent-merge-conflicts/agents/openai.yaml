@@ -1,0 +1,3 @@
+display_name: Prevent Merge Conflicts
+short_description: Check and resolve conflicts before pushes and PRs.
+default_prompt: Check this branch for merge conflicts before creating a pull request.

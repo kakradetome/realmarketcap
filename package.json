@@ -1,0 +1,13 @@
+{
+  "_comment": "This package file defines simple npm commands for local development. JSON does not support real comments, so this field documents the file for beginners.",
+  "name": "realmarketcap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts_comment": "Run npm run dev or npm start to serve the static homepage; npm run lint and npm run build both run the dependency-free static validator.",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "dev": "python3 -m http.server 4173",
+    "lint": "python3 scripts/validate_static_site.py",
+    "build": "python3 scripts/validate_static_site.py"
+  }
+}
