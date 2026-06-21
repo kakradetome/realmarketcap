@@ -347,6 +347,53 @@ Fix issues before adding new features.
 
 ---
 
+## Deployment Standards
+
+### Hosting
+
+- Render
+
+### Build Requirements
+
+Before every deployment:
+
+```bash
+npm run lint
+```
+
+Then:
+
+```bash
+npm run build
+```
+
+Both commands must pass successfully before merging or deploying.
+
+Fix build errors before adding new features.
+
+### Deployment Philosophy
+
+- Deploy early
+- Deploy often
+- Keep the application deployable at all times
+- Never merge or deploy broken code
+- Fix issues immediately
+
+Never allow the main branch to remain broken.
+
+### Environment Variables
+
+Store all secrets and API keys in Render Environment Variables.
+
+Never hardcode:
+
+- API keys
+- Tokens
+- Secrets
+- Credentials
+
+---
+
 ## Performance Standards
 
 Prioritize:
