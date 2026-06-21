@@ -245,6 +245,30 @@ src/
 
 ---
 
+## Documentation Tooling
+
+### Context7 MCP
+
+Use the Context7 MCP server when working with external library, framework, or API documentation.
+
+This is especially important for:
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Zod
+- CoinGecko API usage patterns
+- Render deployment configuration
+
+When documentation is needed, prefer Context7 over memory so implementation details stay current.
+
+Do not hardcode Context7 API keys or credentials in repository files.
+
+If higher Context7 rate limits are needed, store the key in the developer's local MCP client configuration or environment variables outside the repository.
+
+---
+
 ## API Standards
 
 External APIs should never be consumed directly inside UI components.
@@ -344,6 +368,53 @@ npm test
 Do not continue building on top of failing code.
 
 Fix issues before adding new features.
+
+---
+
+## Deployment Standards
+
+### Hosting
+
+- Render
+
+### Build Requirements
+
+Before every deployment:
+
+```bash
+npm run lint
+```
+
+Then:
+
+```bash
+npm run build
+```
+
+Both commands must pass successfully before merging or deploying.
+
+Fix build errors before adding new features.
+
+### Deployment Philosophy
+
+- Deploy early
+- Deploy often
+- Keep the application deployable at all times
+- Never merge or deploy broken code
+- Fix issues immediately
+
+Never allow the main branch to remain broken.
+
+### Environment Variables
+
+Store all secrets and API keys in Render Environment Variables.
+
+Never hardcode:
+
+- API keys
+- Tokens
+- Secrets
+- Credentials
 
 ---
 
@@ -481,6 +552,29 @@ Do not build these yet:
 - AI features
 
 Keep Version 1 focused.
+
+---
+
+## Merge Conflict Prevention Standards
+
+Avoid creating merge conflicts with `main` whenever possible.
+
+Before changing files that already have active pull request conflicts:
+
+1. Prefer the current `main` version for files already shown in GitHub conflict UI.
+2. Move additive work into new, clearly scoped files instead of repeatedly editing conflict-prone files.
+3. Do not reintroduce changes that were just removed to resolve conflicts.
+4. Keep README changes minimal and avoid touching the same lines repeatedly across follow-up PRs.
+5. Keep validators stable unless the user explicitly asks to expand validation coverage.
+6. After conflict-resolution work, scan for conflict markers before committing.
+
+Use this command before committing conflict-resolution changes:
+
+```bash
+rg -n '(<{7}|={7}|>{7})' . || true
+```
+
+If a requested improvement would modify a known conflict-prone file, choose the smallest safe implementation or explain the tradeoff before proceeding.
 
 ---
 

@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  RealMarketCap homepage
+  This file is the static HTML structure for the first homepage pass.
+  Think of it as the "skeleton": CSS controls how these sections look.
+-->
+<html lang="en">
+  <head>
+    <!-- Basic metadata keeps the page readable on desktop and mobile screens. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealMarketCap</title>
+
+    <!-- Connect the page to the stylesheet where the purple/pink theme lives. -->
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- page-shell centers the full page content and keeps it from stretching too wide. -->
+    <div class="page-shell">
+      <!-- The header establishes the brand and gives the homepage simple navigation. -->
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#" aria-label="RealMarketCap home">
+          <span class="brand-mark">R</span>
+          <span>RealMarketCap</span>
+        </a>
+
+        <!-- These links let visitors reach every active page from the homepage. -->
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/" aria-current="page">Home</a>
+          <a href="/top-100.html">Top 100 Live</a>
+          <a href="/dominance.html">Dominance Top 10</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- The hero is the first impression: headline, short promise, and primary actions. -->
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">Market clarity for modern investors</p>
+            <h1>Track real market value with cleaner signals.</h1>
+            <p class="hero-text">
+              RealMarketCap is a simple dashboard concept for following crypto,
+              equities, and emerging assets with less noise and more context.
+            </p>
+
+            <!-- Calls-to-action are placeholders until deeper market pages exist. -->
+            <div class="hero-actions">
+              <a class="button primary" href="#markets">Explore markets</a>
+              <a class="button secondary" href="#watchlist">Build watchlist</a>
+            </div>
+          </div>
+
+          <!-- This card previews the kind of market data the product will eventually show. -->
+          <aside class="market-card" aria-label="Featured market snapshot">
+            <div class="card-header">
+              <span>Market Snapshot</span>
+              <span class="status-pill">Live concept</span>
+            </div>
+
+            <!-- These numbers are static demo content until the app is wired to market data. -->
+            <div class="metric-list">
+              <div>
+                <span>Total Market Cap</span>
+                <strong>$3.42T</strong>
+              </div>
+              <div>
+                <span>24h Volume</span>
+                <strong>$184.6B</strong>
+              </div>
+              <div>
+                <span>Momentum</span>
+                <strong class="positive">+4.8%</strong>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- The feature grid explains the first product ideas in three simple blocks. -->
+        <section class="feature-grid" id="markets" aria-label="Homepage feature sections">
+          <article>
+            <span class="feature-icon">01</span>
+            <h2>Real rankings</h2>
+            <p>Compare assets by market cap, liquidity, momentum, and long-term relevance.</p>
+          </article>
+          <article>
+            <span class="feature-icon">02</span>
+            <h2>Cleaner context</h2>
+            <p>Bring price moves, volume changes, and core stats into one focused view.</p>
+          </article>
+          <article id="watchlist">
+            <span class="feature-icon">03</span>
+            <h2>Personal watchlists</h2>
+            <p>Save the markets you care about and keep important signals front and center.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
