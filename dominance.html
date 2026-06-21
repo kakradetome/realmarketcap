@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominance Top 10 | RealMarketCap</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/market-pages.css" />
+    <script src="/src/market-data.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell market-page">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="RealMarketCap home">
+          <span class="brand-mark">R</span>
+          <span>RealMarketCap</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/top-100.html">Top 100 Live</a>
+          <a href="/dominance.html" aria-current="page">Dominance Top 10</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero compact-hero">
+          <div>
+            <p class="eyebrow">Objective dominance model</p>
+            <h1>The 10 assets showing the strongest staying-power signals.</h1>
+            <p class="hero-text">
+              This ranking updates from real-time market data and scores each asset by
+              market cap strength, rank, liquidity, and blended short-term momentum.
+            </p>
+          </div>
+          <div class="live-panel" aria-live="polite">
+            <span class="live-dot"></span>
+            <strong data-market-status>Connecting to live market data…</strong>
+            <span data-last-updated>Waiting for first update</span>
+          </div>
+        </section>
+
+        <section class="market-pulse" data-market-pulse aria-label="Live market pulse">
+          <article>
+            <span>Market Pulse</span>
+            <strong>Loading live context…</strong>
+          </article>
+        </section>
+
+        <section class="methodology-card" aria-label="Dominance score methodology">
+          <h2>How the dominance score works</h2>
+          <p>
+            This is not financial advice or a guarantee of future returns. It is an
+            objective, live signal blend designed to highlight assets currently showing
+            the strongest dominance characteristics.
+          </p>
+          <ul data-methodology-list>
+            <li>Loading live scoring methodology…</li>
+          </ul>
+        </section>
+
+        <section class="dominance-grid" data-dominance-grid aria-label="Top 10 dominance leaders">
+          <article class="dominance-card loading-card">Loading dynamic dominance leaders…</article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
