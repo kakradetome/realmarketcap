@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 100 Live | RealMarketCap</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/market-pages.css" />
+    <script src="/src/market-data.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell market-page">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="RealMarketCap home">
+          <span class="brand-mark">R</span>
+          <span>RealMarketCap</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/top-100.html" aria-current="page">Top 100 Live</a>
+          <a href="/dominance.html">Dominance Top 10</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero compact-hero">
+          <div>
+            <p class="eyebrow">Top 100 live crypto board</p>
+            <h1>Every major coin, moving in real time.</h1>
+            <p class="hero-text">
+              Prices refresh automatically from CoinGecko so the board feels alive while
+              investors watch market cap, volume, momentum, and 7-day sparkline energy.
+            </p>
+          </div>
+          <div class="live-panel" aria-live="polite">
+            <span class="live-dot"></span>
+            <strong data-market-status>Connecting to live market data…</strong>
+            <span data-last-updated>Waiting for first update</span>
+          </div>
+        </section>
+        <section class="table-card" aria-label="Top 100 cryptocurrency market data">
+          <div class="table-scroll">
+            <table class="market-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Asset</th>
+                  <th class="numeric">Price</th>
+                  <th class="numeric">24h</th>
+                  <th class="numeric">Market Cap</th>
+                  <th class="numeric">Volume</th>
+                  <th>7d Pulse</th>
+                </tr>
+              </thead>
+              <tbody data-top100-table>
+                <tr>
+                  <td colspan="7" class="loading-cell">Loading the top 100 live market board…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
