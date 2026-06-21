@@ -1,0 +1,16 @@
+# Render Blueprint for RealMarketCap
+# This file lets Render create the hosting service from version-controlled config.
+# The app is static right now, so Render only needs a build command and publish path.
+services:
+  - type: web
+    name: realmarketcap
+    runtime: static
+    plan: free
+    # Render runs this before each deploy. Both commands must pass before publishing.
+    buildCommand: npm run lint && npm run build
+    # npm run build creates this folder with the static files Render should serve.
+    staticPublishPath: dist
+    # Auto deploy keeps the project aligned with the "deploy early, deploy often" goal.
+    autoDeploy: true
+    # No secrets are defined here. Add future API keys/tokens in Render Environment Variables.
+    envVars: []
