@@ -555,6 +555,29 @@ Keep Version 1 focused.
 
 ---
 
+## Merge Conflict Prevention Standards
+
+Avoid creating merge conflicts with `main` whenever possible.
+
+Before changing files that already have active pull request conflicts:
+
+1. Prefer the current `main` version for files already shown in GitHub conflict UI.
+2. Move additive work into new, clearly scoped files instead of repeatedly editing conflict-prone files.
+3. Do not reintroduce changes that were just removed to resolve conflicts.
+4. Keep README changes minimal and avoid touching the same lines repeatedly across follow-up PRs.
+5. Keep validators stable unless the user explicitly asks to expand validation coverage.
+6. After conflict-resolution work, scan for conflict markers before committing.
+
+Use this command before committing conflict-resolution changes:
+
+```bash
+rg -n '(<{7}|={7}|>{7})' . || true
+```
+
+If a requested improvement would modify a known conflict-prone file, choose the smallest safe implementation or explain the tradeoff before proceeding.
+
+---
+
 ## Agent Rules
 
 When making implementation decisions:
