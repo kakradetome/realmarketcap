@@ -1,0 +1,303 @@
+/*
+  RealMarketCap visual system
+  This stylesheet teaches the browser how to turn the plain HTML structure into
+  a modern purple/pink landing page. The comments below describe each section.
+*/
+
+/* :root is a good place for page-wide defaults like text color and font stack. */
+:root {
+  color: #fbf7ff;
+  background: #150722;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* border-box makes width calculations easier because padding stays inside the element width. */
+* {
+  box-sizing: border-box;
+}
+
+/* The body owns the main background treatment for the entire homepage. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(236, 72, 153, 0.38), transparent 34rem),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.42), transparent 30rem),
+    linear-gradient(135deg, #160822 0%, #27103f 46%, #3b0a39 100%);
+}
+
+/* This fixed pseudo-element adds a subtle grid overlay without adding extra HTML. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 75%);
+}
+
+/* page-shell centers the content and creates comfortable horizontal spacing. */
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 4rem;
+}
+
+/* The header uses flexbox so the brand sits left and navigation sits right. */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* These interactive elements inherit the page color and remove default underlines. */
+.brand,
+.nav-links a,
+.button {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The brand groups the gradient mark and text into one clickable home link. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* The mark is a simple placeholder logo until a real identity system exists. */
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  box-shadow: 0 1rem 2rem rgba(236, 72, 153, 0.28);
+}
+
+/* The navigation stays lightweight because this first homepage only has anchor links. */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  color: #ead7ff;
+  font-size: 0.95rem;
+}
+
+/* The hero is a two-column layout: message on the left, data preview on the right. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
+  gap: 2rem;
+  align-items: center;
+  min-height: 70vh;
+  padding: 4rem 0;
+}
+
+/* Small uppercase labels create a consistent supporting text style. */
+.eyebrow,
+.status-pill,
+.feature-icon {
+  color: #ffd4ef;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* Remove default top margins so spacing is controlled by component rules. */
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+/* clamp() lets the headline scale between mobile and desktop without media queries. */
+h1 {
+  max-width: 760px;
+  margin-bottom: 1.25rem;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+/* The hero paragraph is slightly muted so the headline remains the focal point. */
+.hero-text {
+  max-width: 620px;
+  color: #e8d8f7;
+  font-size: 1.18rem;
+  line-height: 1.7;
+}
+
+/* Button wrappers use flexbox and wrapping so the layout works on narrow screens. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* The shared button class defines shape, sizing, and text weight. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.2rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+/* Primary buttons use the strongest gradient to signal the main action. */
+.button.primary {
+  background: linear-gradient(135deg, #f472b6, #a855f7);
+  box-shadow: 0 1rem 2rem rgba(168, 85, 247, 0.28);
+}
+
+/* Secondary buttons stay transparent so they support, rather than compete with, the primary CTA. */
+.button.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Cards share glassy surfaces to make the page feel modern without extra images. */
+.market-card,
+.feature-grid article {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(22px);
+}
+
+/* The market card gets larger rounding because it is the hero's featured visual element. */
+.market-card {
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+}
+
+/* These rows use space-between to place labels on the left and values on the right. */
+.card-header,
+.metric-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* The status pill looks like a small tag attached to the demo market card. */
+.status-pill {
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(236, 72, 153, 0.2);
+}
+
+/* The metric list stacks demo stats with consistent vertical rhythm. */
+.metric-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Each metric row receives a darker surface to stand out from the parent card. */
+.metric-list div {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(21, 7, 34, 0.48);
+}
+
+/* Muted labels keep attention on the numeric values. */
+.metric-list span {
+  color: #d9c2ef;
+}
+
+/* Metric values are larger because they are the most important content inside the card. */
+.metric-list strong {
+  font-size: 1.35rem;
+}
+
+/* Positive movement is green to match common market-data conventions. */
+.positive {
+  color: #86efac;
+}
+
+/* The feature grid creates three equal columns on larger screens. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Feature cards get their own padding and rounded corners. */
+.feature-grid article {
+  padding: 1.35rem;
+  border-radius: 1.25rem;
+}
+
+/* Feature headings sit close to their numeric label for a compact card layout. */
+.feature-grid h2 {
+  margin: 1rem 0 0.55rem;
+}
+
+/* Feature descriptions are muted and readable for supporting copy. */
+.feature-grid p {
+  color: #ddc9f1;
+  line-height: 1.6;
+}
+
+/* On smaller screens, columns stack vertically so content remains easy to read. */
+@media (max-width: 760px) {
+  .site-footer,
+  .site-header,
+  .nav-links,
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.25rem 0 0;
+  color: #ddc9f1;
+}
+
+.site-footer p {
+  margin: 0.25rem 0 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-links a,
+.metric-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links a {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+}

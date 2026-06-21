@@ -1,0 +1,111 @@
+<!doctype html>
+<!--
+  RealMarketCap homepage
+  This file is the static HTML structure for the first homepage pass.
+  Think of it as the "skeleton": CSS controls how these sections look.
+-->
+<html lang="en">
+  <head>
+    <!-- Basic metadata keeps the page readable on desktop and mobile screens. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealMarketCap</title>
+
+    <!-- Connect the page to the stylesheet where the purple/pink theme lives. -->
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- page-shell centers the full page content and keeps it from stretching too wide. -->
+    <div class="page-shell">
+      <!-- The header establishes the brand and gives the homepage simple anchor navigation. -->
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#" aria-label="RealMarketCap home">
+          <span class="brand-mark">R</span>
+          <span>RealMarketCap</span>
+        </a>
+
+        <!-- These links let visitors reach every active page from the homepage. -->
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/" aria-current="page">Home</a>
+          <a href="/top-100.html">Top 100 Live</a>
+          <a href="/dominance.html">Dominance Top 10</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- The hero is the first impression: headline, short promise, and primary actions. -->
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">Market clarity for modern investors</p>
+            <h1>Track real market value with cleaner signals.</h1>
+            <p class="hero-text">
+              RealMarketCap is a simple dashboard concept for following crypto,
+              equities, and emerging assets with less noise and more context.
+            </p>
+
+            <!-- Calls-to-action point to the live market pages. -->
+            <div class="hero-actions">
+              <a class="button primary" href="/top-100.html">Explore Top 100</a>
+              <a class="button secondary" href="/dominance.html">View Dominance Top 10</a>
+            </div>
+          </div>
+
+          <!-- This card previews the kind of market data the product will eventually show. -->
+          <aside class="market-card" aria-label="Featured market snapshot">
+            <div class="card-header">
+              <span>Market Snapshot</span>
+              <span class="status-pill">Live concept</span>
+            </div>
+
+            <!-- These links summarize the active market experiences. -->
+            <div class="metric-list">
+              <div>
+                <span>Live Market Board</span>
+                <strong><a href="/top-100.html">Top 100</a></strong>
+              </div>
+              <div>
+                <span>Signal Ranking</span>
+                <strong><a href="/dominance.html">Top 10</a></strong>
+              </div>
+              <div>
+                <span>Refresh Cadence</span>
+                <strong class="positive">45s</strong>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- The feature grid explains the first product ideas in three simple blocks. -->
+        <section class="feature-grid" id="markets" aria-label="Homepage feature sections">
+          <article>
+            <span class="feature-icon">01</span>
+            <h2>Top 100 Live</h2>
+            <p>Open the live board for price, market cap, volume, 24h movement, and sparklines.</p>
+          </article>
+          <article>
+            <span class="feature-icon">02</span>
+            <h2>Dominance Top 10</h2>
+            <p>See the strongest assets ranked by market cap, liquidity, rank, and momentum signals.</p>
+          </article>
+          <article id="watchlist">
+            <span class="feature-icon">03</span>
+            <h2>Everything connected</h2>
+            <p>Every page links to the rest of the site so visitors always know what is available.</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer" aria-label="Site links">
+        <div>
+          <strong>RealMarketCap</strong>
+          <p>Live crypto market intelligence, rankings, and dominance signals.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/top-100.html">Top 100 Live</a>
+          <a href="/dominance.html">Dominance Top 10</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
