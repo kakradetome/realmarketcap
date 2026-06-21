@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  RealMarketCap homepage
+  This file is the static HTML structure for the first homepage pass.
+  Think of it as the "skeleton": CSS controls how these sections look.
+-->
+<html lang="en">
+  <head>
+    <!-- Basic metadata keeps the page readable on desktop and mobile screens. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealMarketCap</title>
+
+    <!-- Connect the page to the stylesheet where the purple/pink theme lives. -->
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- page-shell centers the full page content and keeps it from stretching too wide. -->
+    <div class="page-shell">
+      <!-- The header establishes the brand and gives the homepage simple navigation. -->
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="RealMarketCap home">
+          <span class="brand-mark">R</span>
+          <span>RealMarketCap</span>
+        </a>
+
+        <!-- These links lead to live market experiences powered by CoinGecko data. -->
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/top-100.html">Top 100 Live</a>
+          <a href="/dominance.html">Dominance Top 10</a>
+          <a href="#overview">Overview</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- The hero is the first impression: headline, short promise, and primary actions. -->
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">Real-time crypto market intelligence</p>
+            <h1>Watch the market move as it happens.</h1>
+            <p class="hero-text">
+              RealMarketCap tracks the top 100 crypto assets with live CoinGecko data,
+              animated price movement, momentum signals, and a dynamic dominance model.
+            </p>
+
+            <!-- Calls-to-action send visitors into the live data pages. -->
+            <div class="hero-actions">
+              <a class="button primary" href="/top-100.html">Open Top 100</a>
+              <a class="button secondary" href="/dominance.html">See Dominance Top 10</a>
+            </div>
+          </div>
+
+          <!-- This card previews the kind of live market data the product shows. -->
+          <aside class="market-card" aria-label="Featured market snapshot">
+            <div class="card-header">
+              <span>Live Experiences</span>
+              <span class="status-pill">CoinGecko API</span>
+            </div>
+
+            <!-- These rows point users toward the two new working market views. -->
+            <div class="metric-list">
+              <div>
+                <span>Top assets tracked</span>
+                <strong>100</strong>
+              </div>
+              <div>
+                <span>Refresh cadence</span>
+                <strong>45s</strong>
+              </div>
+              <div>
+                <span>Dominance model</span>
+                <strong class="positive">Live</strong>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- The feature grid explains the first product ideas in three simple blocks. -->
+        <section class="feature-grid" id="markets" aria-label="Homepage feature sections">
+          <article>
+            <span class="feature-icon">01</span>
+            <h2>Top 100 live</h2>
+            <p>Track price, market cap, volume, 24h movement, and animated 7-day sparklines.</p>
+          </article>
+          <article>
+            <span class="feature-icon">02</span>
+            <h2>Dominance signals</h2>
+            <p>Rank leaders with a transparent model using market cap, liquidity, rank, and momentum.</p>
+          </article>
+          <article id="watchlist">
+            <span class="feature-icon">03</span>
+            <h2>Built to stay alive</h2>
+            <p>The pages refresh automatically so visitors can keep watching market changes unfold.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
